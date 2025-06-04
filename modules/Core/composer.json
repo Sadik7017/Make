@@ -1,0 +1,23 @@
+{
+    "name": "modules/core",
+    "description": "Core module for the application",
+    "type": "laravel-module",
+    "require": {
+        "php": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Core\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Core\\Providers\\CoreServiceProvider"
+            ]
+        }
+    }
+} 

@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "naruto/skeleton",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
     "keywords": [
@@ -13,9 +13,7 @@
         "laravel/framework": "^12.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.8",
-        "php": "^8.2",
-        "modules/test": "*",
-        "modules/demo": "*"
+        "php": "^8.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -37,9 +35,7 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-            "Modules\\Core\\": "modules/Core/src/",
-            "Modules\\Test\\": "modules/test/src/",
-            "Modules\\Demo\\": "modules/demo/src/"
+            "Modules\\Core\\": "modules/Core/src/"
         },
         "files": [
             "modules/Core/src/helpers.php"
