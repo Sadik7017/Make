@@ -1,8 +1,42 @@
-# Core Module
+# Laravel-Modules
 
-The Core module is the foundation of the modular system in this application. It provides essential functionality for module management, including module autoloading, marketplace integration, and module lifecycle management.
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/nwidart/laravel-modules.svg?style=flat-square)](https://packagist.org/packages/nwidart/laravel-modules)
+
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+
+[![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/nWidart/laravel-modules.svg?maxAge=86400&style=flat-square)](https://scrutinizer-ci.com/g/nWidart/laravel-modules/?branch=master)
+
+[![Total Downloads](https://img.shields.io/packagist/dt/nwidart/laravel-modules.svg?style=flat-square)](https://packagist.org/packages/nwidart/laravel-modules)
+
+
+| **Laravel** | **laravel-modules** |
+|-------------|---------------------|
+| 5.4         | ^1.0                |
+| 5.5         | ^2.0                |
+| 5.6         | ^3.0                |
+| 5.7         | ^4.0                |
+| 5.8         | ^5.0                |
+| 6.0         | ^6.0                |
+| 7.0         | ^7.0                |
+| 8.0         | ^8.0                |
+| 9.0         | ^9.0                |
+| 10.0        | ^10.0               |
+| 11.0        | ^11.0               |
+| 12.0        | ^12.0               |
+
+
+
+`barbarian/king/laravel-modules` The Core module is the foundation of the modular system in this application. It provides essential functionality for module management, including module autoloading, marketplace integration, and module lifecycle management.
+
+This package is a re-published, re-organised and maintained version of [pingpong/modules](https://github.com/Sadik7017/Make), which isn't maintained anymore.
+
+With one big bonus that the original package didn't have: **tests**.
+
+## upgrade
+To upgrade to version V11 follow [Upgrade Guide](https://laravelmodules.com/docs/v11/upgrade) on official document.
 
 ## Module Management System
+
 
 ### Autoloading System
 
@@ -20,38 +54,44 @@ The application uses a centralized module management system where:
    {
        "autoload": {
            "psr-4": {
-               "Modules\\Core\\": "modules/Core/src/"
+               "Package\\Core\\": "package/Core/src/"
            }
        }
    }
    ```
 
-2. **Module-specific composer.json**
+2. **package-specific composer.json**
    - Each module has its own composer.json
    - Manages its own dependencies and autoloading
    - Example:
    ```json
    {
-       "name": "modules/your-module",
+       "name": "package/your-module",
        "autoload": {
            "psr-4": {
-               "Modules\\YourModule\\": "src/"
+               "package\\YourModule\\": "src/"
            }
        }
    }
    ```
 
-### Commands
 
-#### `module:autoload`
-Maintains the autoloading configuration by:
-- Removing any non-Core module entries from main composer.json
-- Ensuring Core module is properly registered
-- Running composer dump-autoload
+## Install
 
-```bash
-php artisan module:autoload
+To install via Composer, run:
+
+``` bash
+composer composer require modulestesting/core
+
+The package will automatically register a service provider and alias.
+
+Optionally, publish the package's configuration file by running:
+
+``` bash
+php artisan vendor:publish --provider="Package\Core\LaravelModulesServiceProvider"
 ```
+
+
 
 ### Module Lifecycle
 
@@ -65,6 +105,7 @@ php artisan module:autoload
    
    # Enable module
    php artisan module:enable ModuleName
+   
    ```
 
 2. **Removing a Module**
@@ -76,7 +117,8 @@ php artisan module:autoload
    php artisan module:autoload
    ```
 
-### Best Practices
+
+   ### Best Practices
 
 1. **Adding Dependencies**
    - Add module-specific dependencies to the module's own composer.json
@@ -90,7 +132,7 @@ php artisan module:autoload
 ## Module Structure
 
 ```
-modules/
+Package/
 ├── Core/
 │   ├── src/
 │   │   ├── Console/
@@ -111,3 +153,40 @@ When contributing to the module system:
 2. Use the Core module's services for module management
 3. Document any changes to the module system
 4. Test module installation and removal processes 
+
+
+## Documentation
+
+You'll find installation instructions and full documentation on [https://laravelmodules.com/](https://laravelmodules.com/docs).
+
+## Demo
+
+You can see a demo using Laravel Breeze at https://github.com/Sadik7017/Make
+
+This is a complete application using Auth, Base and Profile modules.
+
+## Community
+
+We also have a Discord community. [https://discord.gg/hkF7BRvRZK](https://discord.gg/hkF7BRvRZK) For quick help, ask questions in the appropriate channel.
+
+## Credits
+
+- [Sadik7017](https://github.com/Sadik7017)
+- [All Contributors](../../contributors)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+
+
+
+
+
+
+
+
+
+
+
+

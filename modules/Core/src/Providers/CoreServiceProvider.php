@@ -28,13 +28,10 @@ use Modules\Core\Console\Commands\ModuleAutoloadCommand;
 use Modules\Core\Console\Commands\Make\ModuleControllerMakeCommand;
 use Modules\Core\Console\Commands\Make\ModuleModelMakeCommand;
 use Modules\Core\Console\Commands\Make\ModuleResourceMakeCommand;
-use Modules\Core\Console\Commands\ModuleMigrationAddColumnCommand;
-use Modules\Core\Console\Commands\ModuleSeederMakeCommand;
 use Modules\Core\Console\Commands\Make\ModuleRepositoryMakeCommand;
 use Modules\Core\Console\Commands\Make\ModuleMakeEventCommand;
 use Modules\Core\Console\Commands\Make\MakeModuleRequest;
 use Modules\Core\Console\Commands\Make\ModuleMakeHelperCommand;
-use Modules\Core\Console\Commands\ModuleMigrateFreshCommand;
 use Modules\Core\Console\Commands\Make\ModuleMakeExceptionCommand;
 use Modules\Core\Console\Commands\Make\ModuleMakeScopeCommand;
 use Modules\Core\Console\Commands\Make\MakeComponentView;
@@ -70,7 +67,6 @@ use Modules\Core\Console\Commands\Database\Factories\MakeModuleFactory;
 use Modules\Core\Console\Commands\Database\Migrations\MigrateRefresh;
 use Modules\Core\Console\Commands\Database\Migrations\MigrateSingleModuleMigration;
 use Modules\Core\Console\Commands\Database\Migrations\MigrateStatusCommand;
-use Modules\Core\Console\Commands\Database\Migrations\ModuleMigrateCommand;
 use Modules\Core\Console\Commands\Database\Migrations\ModuleMigrateFresh;
 use Modules\Core\Console\Commands\Database\Migrations\ModuleMigrateResetCommand;
 use Modules\Core\Console\Commands\Database\Migrations\ModuleMigrateRollbackCommand;
@@ -107,13 +103,9 @@ class CoreServiceProvider extends ServiceProvider
         ModuleControllerMakeCommand::class,
         ModuleModelMakeCommand::class,
         ModuleResourceMakeCommand::class, 
-        ModuleMigrationAddColumnCommand::class,
-        ModuleSeederMakeCommand::class,
         ModuleRepositoryMakeCommand::class,
-        MigrateSingleModuleMigration::class,
         ModuleMakeEventCommand::class,
         ModuleMakeHelperCommand::class,
-        ModuleMigrateFreshCommand::class,
         ModuleMakeExceptionCommand::class,
         ModuleMakeScopeCommand::class,
         MakeComponentView ::class,
@@ -142,7 +134,6 @@ class CoreServiceProvider extends ServiceProvider
         MigrateRefresh::class,
         MigrateSingleModuleMigration::class,
         MigrateStatusCommand::class,
-        ModuleMigrateCommand::class,
         ModuleMigrateFresh::class,
         ModuleMigrateResetCommand::class,
         ModuleMigrateRollbackCommand::class,
